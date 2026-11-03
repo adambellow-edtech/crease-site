@@ -1,4 +1,4 @@
-@font-face { font-family: "Caveat"; font-weight: 700; font-display: swap; src: url("fonts/Caveat-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Marker"; font-weight: 400; font-display: swap; src: url("fonts/PermanentMarker.woff2") format("woff2"); }
 @font-face { font-family: "Baloo 2"; font-weight: 800; font-display: swap; src: url("fonts/Baloo2-ExtraBold.ttf") format("truetype"); }
 @font-face { font-family: "Baloo 2"; font-weight: 500 600; font-display: swap; src: url("fonts/Baloo2-SemiBold.ttf") format("truetype"); }
 :root {
@@ -13,11 +13,11 @@ body { margin: 0; min-height: 100vh; color: #F4F7FB; font-family: "Baloo 2", sys
   background: radial-gradient(circle at 50% 0, var(--desk2), var(--desk) 900px) no-repeat, var(--desk); }
 a { color: inherit; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-.hand { font-family: "Caveat", cursive; font-weight: 700; }
+.hand { font-family: "Marker", "Baloo 2", sans-serif; font-weight: 400; }
 
 header.top { padding: 18px 0; }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 30px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 26px; }
 .brand img { width: 40px; height: 40px; border-radius: 10px; }
 header nav a { margin-left: 18px; text-decoration: none; color: var(--muted); }
 header nav a:hover { color: #fff; }
@@ -30,12 +30,12 @@ header nav a:hover { color: #fff; }
 
 /* Hero */
 .hero { padding: 40px 0 70px; text-align: center; }
-.logo { display: inline-flex; font-family: "Caveat", cursive; font-size: clamp(76px, 15vw, 150px); line-height: 1; perspective: 600px; }
+.logo { display: inline-flex; font-family: "Marker", "Baloo 2", sans-serif; font-size: clamp(64px, 13vw, 128px); line-height: 1.15; perspective: 600px; }
 .logo span { background: var(--paper); padding: 4px 18px 10px; box-shadow: 0 8px 0 rgba(0,0,0,.3); }
 .logo .l { color: var(--red); border-radius: 14px 0 0 14px; padding-left: 26px; transform-origin: right center; animation: fold 1.6s .3s cubic-bezier(.5,1.6,.5,1) both; }
 .logo .r { color: var(--ink); border-radius: 0 14px 14px 0; padding-right: 30px; }
 @keyframes fold { 0% { transform: rotateY(-170deg); } 100% { transform: rotateY(0); } }
-.tagline { font-family: "Caveat", cursive; font-size: clamp(26px, 4vw, 36px); color: var(--muted); margin: 18px 0 26px; }
+.tagline { font-weight: 600; font-size: clamp(20px, 3vw, 26px); letter-spacing: .01em; color: var(--muted); margin: 18px 0 26px; }
 .cta { display: inline-block; padding: 14px 28px; border-radius: 99px; background: var(--red); color: #fff; text-decoration: none; font-weight: 800; font-size: 19px;
   box-shadow: 0 5px 0 #B23237; transition: transform .15s; }
 .cta:hover { transform: translateY(-2px); }
@@ -48,8 +48,8 @@ section.feature { padding: 46px 0; }
 .row { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; }
 .row.flip { grid-template-columns: 1.25fr 1fr; }
 .row.flip .text { order: 2; }
-.feature h2 { font-family: "Caveat", cursive; font-size: clamp(40px, 6vw, 58px); line-height: 1; margin: 0 0 12px; }
-.feature p { font-size: 18px; color: var(--muted); margin: 0 0 10px; }
+.feature h2 { font-family: "Marker", "Baloo 2", sans-serif; font-size: clamp(34px, 5vw, 50px); line-height: 1.1; letter-spacing: .01em; margin: 0 0 12px; }
+.feature p { font-size: 19px; font-weight: 500; line-height: 1.6; color: var(--muted); margin: 0 0 10px; }
 .shot { padding: 10px; transform: rotate(1deg); }
 .row.flip .shot { transform: rotate(-1deg); }
 .shot img { width: 100%; display: block; border-radius: 4px; }
@@ -61,12 +61,12 @@ section.feature { padding: 46px 0; }
 .cards .paper:nth-child(1) { transform: rotate(-1.5deg); }
 .cards .paper:nth-child(2) { transform: rotate(1deg); }
 .cards .paper:nth-child(3) { transform: rotate(-.5deg); }
-.cards h3 { font-family: "Caveat", cursive; font-size: 36px; margin: 0 0 4px; line-height: 1.1; }
-.cards p { margin: 0; font-size: 16px; }
+.cards h3 { font-family: "Marker", "Baloo 2", sans-serif; font-size: 30px; margin: 0 0 4px; line-height: 1.1; }
+.cards p { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.55; }
 
 .duo { text-align: center; padding: 30px 0 70px; }
 .duo .paper { display: inline-block; max-width: 640px; padding: 30px 30px 24px; transform: rotate(-.6deg); }
-.duo h2 { font-family: "Caveat", cursive; font-size: 46px; margin: 0; color: var(--purple); }
+.duo h2 { font-family: "Marker", "Baloo 2", sans-serif; font-size: 46px; margin: 0; color: var(--purple); }
 .duo p { font-size: 18px; margin: 6px 0 0; }
 
 footer { padding: 30px 0 50px; color: var(--muted); font-size: 15px; }
@@ -74,8 +74,8 @@ footer .wrap { display: flex; gap: 20px; flex-wrap: wrap; }
 
 /* Plain text pages */
 .doc { max-width: 760px; margin: 20px auto 60px; padding: 40px 34px 30px; }
-.doc h1 { font-family: "Caveat", cursive; font-size: 54px; margin: 0 0 10px; color: var(--red); line-height: 1; }
-.doc h2 { font-family: "Caveat", cursive; font-size: 34px; margin: 26px 0 4px; }
+.doc h1 { font-family: "Marker", "Baloo 2", sans-serif; font-size: 54px; margin: 0 0 10px; color: var(--red); line-height: 1; }
+.doc h2 { font-family: "Marker", "Baloo 2", sans-serif; font-size: 34px; margin: 26px 0 4px; }
 .doc p, .doc li { font-size: 17px; font-weight: 500; }
 
 @media (max-width: 760px) {
@@ -85,3 +85,6 @@ footer .wrap { display: flex; gap: 20px; flex-wrap: wrap; }
   header nav a { margin-left: 12px; font-size: 15px; }
   .cta.soft { margin: 12px 0 0; }
 }
+h1, h2, h3, .logo, .hand { font-weight: 400; }
+.doc h2 { font-size: 28px; } .doc h1 { font-size: 46px; }
+.logo .l { padding-right: 4px; } .logo .r { padding-left: 4px; }
