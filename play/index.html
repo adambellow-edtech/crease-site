@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Crease: a page from a friend</title>
+  <meta name="description" content="A friend sent you a Crease page. Open it in Crease and fold the page to reach the star.">
+  <meta property="og:title" content="Crease">
+  <meta property="og:description" content="A friend sent you a page. Fold the page, roll the ball, reach the star.">
+  <meta property="og:image" content="https://creasegame.com/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 30px 16px; }
+    .card { width: 100%; max-width: 440px; padding: 36px 26px 26px; text-align: center; transform: rotate(-1deg); }
+    img.icon { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    h1 { font-family: "Caveat", cursive; font-size: 56px; line-height: 1; margin: 14px 0 6px; color: var(--red); }
+    .what { font-size: 19px; margin: 0 0 18px; }
+    .race { display: inline-block; background: var(--sun); padding: 4px 16px; border-radius: 99px; font-weight: 800; margin-bottom: 16px; }
+    a.btn { display: block; margin: 10px auto 0; max-width: 300px; padding: 13px 18px; border-radius: 99px; font-weight: 800; font-size: 19px; text-decoration: none; }
+    a.open { background: var(--red); color: #fff; box-shadow: 0 5px 0 #B23237; }
+    a.get { color: var(--ink); border: 2px solid rgba(34,40,58,.25); }
+    p.small { font-size: 14px; opacity: .65; margin: 18px 0 0; }
+  </style>
+</head>
+<body>
+  <main class="paper card">
+    <div class="tape"></div>
+    <img class="icon" src="../assets/icon.png" alt="Crease app icon">
+    <h1 id="title">Crease</h1>
+    <p class="what" id="what">A friend sent you a page to fold.</p>
+    <div class="race" id="race" hidden></div>
+    <a class="btn open" id="open" href="#">Open in Crease</a>
+    <a class="btn get" href="../">Get Crease</a>
+    <p class="small">With Crease on your iPhone, tapping the link opens the page right in the game.</p>
+  </main>
+  <script>
+    (function () {
+      var frag = (location.hash || "").replace(/^#/, "");
+      var open = document.getElementById("open");
+      if (!frag) { open.style.display = "none"; return; }
+      var head = frag.split("&")[0];
+      var params = {};
+      frag.split("&").slice(1).forEach(function (kv) {
+        var p = kv.split("="); params[p[0]] = decodeURIComponent((p[1] || "").replace(/\+/g, " "));
+      });
+      var what = document.getElementById("what"), title = document.getElementById("title");
+      var m;
+      if (/^d\d+$/.test(head)) { what.textContent = "Daily Fold number " + head.slice(1) + "."; }
+      else if ((m = head.match(/^w(\d+)-(\d+)$/))) { what.textContent = "World " + m[1] + ", page " + m[2] + "."; }
+      else { what.textContent = "A page your friend built."; }
+      if (params.t) {
+        var who = params.n || "Your friend";
+        var folds = params.f === "1" ? "1 fold" : (params.f || "?") + " folds";
+        title.textContent = "Race my ghost";
+        var race = document.getElementById("race");
+        race.textContent = who + ": " + folds + ", " + (Number(params.t) / 100).toFixed(2) + "s";
+        race.hidden = false;
+      }
+      // If the link opened here in Safari, this hands it to the app.
+      open.href = "crease://open#" + frag;
+    })();
+  </script>
+</body>
+</html>

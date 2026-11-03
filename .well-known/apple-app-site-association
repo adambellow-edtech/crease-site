@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["8Z679P8QFB.com.adambellow.crease"],
+        "components": [
+          { "/": "/play*", "comment": "Shared pages, races and Daily Folds" }
+        ]
+      }
+    ]
+  }
+}
