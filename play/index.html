@@ -17,26 +17,23 @@
   <link rel="stylesheet" href="../assets/site.css">
   <style>
     body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 30px 16px; }
-    .card { width: 100%; max-width: 440px; padding: 36px 26px 26px; text-align: center; transform: rotate(-1deg); }
+    .card { width: 100%; max-width: 440px; padding: 40px 26px 30px; text-align: center; transform: rotate(-1deg); }
     img.icon { width: 104px; height: 104px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
-    h1 { font-family: "Marker", "Baloo 2", sans-serif; font-weight: 400; font-size: 46px; line-height: 1.1; margin: 14px 0 6px; color: var(--red); }
+    h1 { font-weight: 800; font-size: 44px; line-height: 1.1; margin: 16px 0 6px; color: var(--coral); }
     .what { font-size: 19px; font-weight: 800; margin: 0 0 18px; }
-    .race { display: inline-block; background: var(--sun); padding: 4px 16px; border-radius: 99px; font-weight: 800; margin-bottom: 16px; }
-    a.btn { display: block; margin: 10px auto 0; max-width: 300px; padding: 13px 18px; border-radius: 99px; font-weight: 800; font-size: 19px; text-decoration: none; }
-    a.open { background: var(--red); color: #fff; box-shadow: 0 5px 0 #B23237; }
-    a.get { color: var(--ink); border: 2px solid rgba(34,40,58,.25); }
-    p.small { font-size: 14px; opacity: .65; margin: 18px 0 0; }
+    .race { display: inline-block; background: var(--gold); padding: 4px 16px; border-radius: 99px; font-weight: 800; margin-bottom: 16px; }
+    a.btn { display: flex; justify-content: center; margin: 14px auto 0; max-width: 300px; }
+    p.small { font-size: 14px; color: var(--ink-soft); margin: 20px 0 0; }
   </style>
 </head>
 <body>
-  <main class="paper card">
-    <div class="tape"></div>
+  <main class="page spiral card">
     <img class="icon" src="../assets/icon.png" alt="Crease app icon">
     <h1 id="title">Crease</h1>
     <p class="what" id="what">A friend sent you a page to fold.</p>
     <div class="race" id="race" hidden></div>
-    <a class="btn open" id="open" href="#">Open in Crease</a>
-    <a class="btn get" href="../">Get Crease</a>
+    <a class="btn" id="open" href="#">Open in Crease</a>
+    <a class="btn paper-btn" href="../">Get Crease</a>
     <p class="small">With Crease on your iPhone, tapping the link opens the page right in the game.</p>
   </main>
   <script>
